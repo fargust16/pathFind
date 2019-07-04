@@ -1,5 +1,6 @@
 import React from 'react';
 import Deque from 'collections/deque';
+import {randomInteger} from '../services/func';
 
 const Button = {
     lineHeight: '18px',
@@ -166,10 +167,6 @@ class Task_1 extends React.Component {
         this.resetMap();
     }
 
-    randomInteger = (min, max) => {
-        return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-    };
-
     breadth_first_search_3(graph, start, goal) {
         let frontier = new Queue();
         frontier.put(start);
@@ -222,7 +219,7 @@ class Task_1 extends React.Component {
         for (let i = 0; i < m; i++) {
             rooms[i] = [];
             for (let j = 0; j < n; j++) {
-                let step = this.randomInteger(0, 3);
+                let step = randomInteger(0, 3);
                 if ((i === goal[0] && j === goal[1]) || (i === start[0] && j === start[1])) {
                     step = 1;
                 }

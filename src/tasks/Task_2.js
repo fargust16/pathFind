@@ -1,4 +1,5 @@
 import * as React from "react";
+import {randomInteger} from '../services/func';
 
 const HLENGTH = 5;
 
@@ -62,14 +63,10 @@ class Task_2 extends React.Component {
         this.generateNewHand();
     }
 
-    randomInteger = (min, max) => {
-        return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-    };
-
     generateNewHand = () => {
         let newHand = [];
         for (let i = 0; i < HLENGTH; i++) {
-            newHand[i] = this.randomInteger(6, 14);
+            newHand[i] = randomInteger(6, 14);
         }
 
         let result = newHand.map(card => {

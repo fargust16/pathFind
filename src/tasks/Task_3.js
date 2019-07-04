@@ -1,4 +1,5 @@
 import * as React from "react";
+import {randomInteger} from '../services/func';
 
 const Bank = {
     margin: '15px'
@@ -56,16 +57,12 @@ class Task_3 extends React.Component {
         this.getBanknotes();
     }
 
-    randomInteger = (min, max) => {
-        return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-    };
-
     getBanknotes = () => {
         let banknotes = [];
-        let bLength = this.randomInteger(5, 5);
+        let bLength = randomInteger(5, 5);
 
         for (let i = 0; i < bLength; i++) {
-            banknotes[i] = this.randomInteger(1, 100);
+            banknotes[i] = randomInteger(1, 100);
         }
 
         banknotes.sort();
@@ -122,7 +119,7 @@ class Task_3 extends React.Component {
 
     nextIndex = () => {
         const {results} = this.state;
-        let newIndex = this.randomInteger(0, Object.keys(results).length);
+        let newIndex = randomInteger(0, Object.keys(results).length);
         this.setState({srIndex: newIndex})
     };
 

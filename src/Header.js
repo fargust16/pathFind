@@ -21,6 +21,7 @@ class Header extends React.Component {
                     <li style={NavItem}><Link to='path-find'>Поиск пути</Link></li>
                     <li style={NavItem}><Link to='poker'>Покер</Link></li>
                     <li style={NavItem}><Link to='bank'>Банк</Link></li>
+                    <li style={NavItem}><Link to='schedule'>Расписание</Link></li>
                 </ul>
             </nav>
         </header>
